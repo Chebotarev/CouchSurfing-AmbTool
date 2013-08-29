@@ -1,0 +1,48 @@
+<h1>Listing Invites</h1>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%= link_to 'Back to Tools', welcome_index_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>User name</th>
+      <th>Email</th>
+      <th>Answer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invites.each do |invite| %>
+      <% case invite.answer %>
+      <% when "Yes" %>
+        <tr class="green">
+      <% else  %>
+        <tr>
+      <% end %>
+
+      
+        <td><%= invite.user_id %></td>
+        <td><%= invite.user_name %></td>
+        <td><%= invite.email %></td>
+        <td><%= invite.answer %></td>
+        <td><%= link_to 'Show', invite %></td>
+        <td><%= link_to 'Edit', edit_invite_path(invite) %></td>
+        <td><%= link_to 'Destroy', invite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invite', new_invite_path %>
