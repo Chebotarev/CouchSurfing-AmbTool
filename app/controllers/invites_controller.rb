@@ -1,6 +1,6 @@
 class InvitesController < ApplicationController
   before_action :set_invite, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /invites
   # GET /invites.json
   def index

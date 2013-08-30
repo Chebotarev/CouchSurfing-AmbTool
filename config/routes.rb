@@ -1,4 +1,6 @@
 AmbassadorAdminTools::Application.routes.draw do
+  resources :blacklists
+
   resources :invites
 
   get "welcome/index"

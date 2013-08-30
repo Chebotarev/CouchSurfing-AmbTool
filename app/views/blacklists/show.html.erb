@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @blacklist.user_id %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @blacklist.user_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @blacklist.email %>
+</p>
+
+<%= link_to 'Edit', edit_blacklist_path(@blacklist) %> |
+<%= link_to 'Back', blacklists_path %>

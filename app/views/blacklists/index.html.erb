@@ -1,0 +1,33 @@
+<h1>Listing blacklists</h1>
+
+<%= link_to 'Back to Tools', welcome_index_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>User name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blacklists.each do |blacklist| %>
+      <tr>
+        <td><%= blacklist.user_id %></td>
+        <td><%= blacklist.user_name %></td>
+        <td><%= blacklist.email %></td>
+        <td><%= link_to 'Show', blacklist %></td>
+        <td><%= link_to 'Edit', edit_blacklist_path(blacklist) %></td>
+        <td><%= link_to 'Destroy', blacklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blacklist', new_blacklist_path %>
