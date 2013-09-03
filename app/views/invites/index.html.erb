@@ -55,7 +55,7 @@
         <td><%= link_to 'Show', invite %></td>
         <td><%= link_to 'Edit', edit_invite_path(invite) %></td>
         <td><%= link_to 'Destroy', invite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= check_box_tag(:select) %></td> 
+        <td><%= check_box_tag 'selected_users[]', invite.user_id %></td> 
       </tr>
     <% end %>
   </tbody>
