@@ -6,6 +6,20 @@ tbody tr:hover {
 	background-color: #d8d8d8;
 }
 
-.green {
+.ans_yes {
 	background-color: #8bad53;
+}
+
+.ans_no {
+	background-color: red;
+}
+
+.hidden {
+	display: none;
+}
+
+#SortTool {
+	position: fixed;
+	top: 10%;
+	left: 80%;
 }

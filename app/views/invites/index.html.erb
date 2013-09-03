@@ -1,10 +1,23 @@
 <h1>Listing Invites</h1>
 
+<!-- IMPLEMENT
 <%= form_tag("/invites", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
 <% end %>
+-->
+
+<div id="SortTool">
+  <%= radio_button_tag(:filter, "all", checked:true) %>
+  <%= label_tag "Show All" %><br>
+  <%= radio_button_tag(:filter, "yes") %>
+  <%= label_tag "Show Yes Only" %><br>
+  <%= radio_button_tag(:filter, "no" ) %>
+  <%= label_tag "Show No Only" %><br>
+  <%= radio_button_tag(:filter, "nr") %>
+  <%= label_tag "Show No Responses Only" %><br><br>
+</div>
 
 <%= link_to 'Back to Tools', welcome_index_path %>
 
@@ -25,12 +38,14 @@
     <% @invites.each do |invite| %>
       <% case invite.answer %>
       <% when "Yes" %>
-        <tr class="green">
-      <% else  %>
-        <tr>
+        <tr class="invite ans_yes">
+      <% when "No" %>
+        <tr class="invite ans_no">
+      <% else %>
+        <tr class="invite ans_nr">
       <% end %>
 
-      
+        
         <td><%= invite.user_id %></td>
         <td><%= invite.user_name %></td>
         <td><%= invite.email %></td>
@@ -38,6 +53,7 @@
         <td><%= link_to 'Show', invite %></td>
         <td><%= link_to 'Edit', edit_invite_path(invite) %></td>
         <td><%= link_to 'Destroy', invite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
       </tr>
     <% end %>
   </tbody>
