@@ -1,6 +1,9 @@
-<h1>Listing blacklists</h1>
+<h1>Listing Blacklist Entries</h1>
 
-<%= link_to 'Back to Tools', welcome_index_path %>
+<div id="BlacklistTools">
+  <br>
+  <%= link_to 'New Blacklist Entry', new_blacklist_path %>
+</div>
 
 <table>
   <thead>
@@ -27,7 +30,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Blacklist', new_blacklist_path %>

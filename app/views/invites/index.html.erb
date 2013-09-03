@@ -8,7 +8,11 @@
 <% end %>
 -->
 
-<div id="SortTool">
+<div id="InviteTools">
+  <br>
+  <%= link_to 'New Invite', new_invite_path %>
+  <br><br>
+
   <%= radio_button_tag(:filter, "all", checked:true) %>
   <%= label_tag "Show All" %><br>
   <%= radio_button_tag(:filter, "yes") %>
@@ -16,10 +20,8 @@
   <%= radio_button_tag(:filter, "no" ) %>
   <%= label_tag "Show No Only" %><br>
   <%= radio_button_tag(:filter, "nr") %>
-  <%= label_tag "Show No Responses Only" %><br><br>
+  <%= label_tag "Show Non-Responders Only" %><br><br>
 </div>
-
-<%= link_to 'Back to Tools', welcome_index_path %>
 
 <table>
   <thead>
@@ -53,12 +55,8 @@
         <td><%= link_to 'Show', invite %></td>
         <td><%= link_to 'Edit', edit_invite_path(invite) %></td>
         <td><%= link_to 'Destroy', invite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      
+        <td><%= check_box_tag(:select) %></td> 
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Invite', new_invite_path %>

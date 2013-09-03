@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+#SiteTools {
+	position: fixed;
+	top: 5%;
+	left: 80%;
+}

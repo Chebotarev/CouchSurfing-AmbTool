@@ -10,7 +10,7 @@ tbody tr:hover {
 	background-color: #8bad53;
 }
 
-.ans_no {
+.blacklisted {
 	background-color: red;
 }
 
@@ -18,8 +18,8 @@ tbody tr:hover {
 	display: none;
 }
 
-#SortTool {
+#InviteTools {
 	position: fixed;
-	top: 10%;
+	top: 15%;
 	left: 80%;
 }
