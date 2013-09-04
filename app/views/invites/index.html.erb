@@ -21,6 +21,15 @@
   <%= label_tag "Show No Only" %><br>
   <%= radio_button_tag(:filter, "nr") %>
   <%= label_tag "Show Non-Responders Only" %><br><br>
+
+  <br>
+
+  <div id="NumberSelected">
+  </div>
+
+  <br>
+
+  <%= link_to 'Show Selected', selected_path %> 
 </div>
 
 <table>
@@ -55,7 +64,8 @@
         <td><%= link_to 'Show', invite %></td>
         <td><%= link_to 'Edit', edit_invite_path(invite) %></td>
         <td><%= link_to 'Destroy', invite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= check_box_tag 'selected_users[]', invite.user_id %></td> 
+        <td><%= check_box_tag "selected_ids[]", invite.id, false, :id => "selected_ids_#{invite.id}", :class => "selectable" %></td> 
+
       </tr>
     <% end %>
   </tbody>

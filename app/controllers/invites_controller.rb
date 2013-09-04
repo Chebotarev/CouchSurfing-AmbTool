@@ -4,13 +4,17 @@ class InvitesController < ApplicationController
   # GET /invites
   # GET /invites.json
   def index
-      @invites = Invite.all
+    @invites = Invite.all
   end
 
   # GET /invites/1
   # GET /invites/1.json
   def show
   end
+
+ # def show_selected
+  #  @selected_invites = Invite.where(:id => params[:selected_ids])
+ # end
 
   # GET /invites/new
   def new
@@ -25,7 +29,7 @@ class InvitesController < ApplicationController
   # POST /invites.json
   def create
     @invite = Invite.new(invite_params)
-
+    
     respond_to do |format|
       if @invite.save
         format.html { redirect_to @invite, notice: 'Invite was successfully created.' }

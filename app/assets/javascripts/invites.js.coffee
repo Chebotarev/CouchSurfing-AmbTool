@@ -3,7 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  $ ->
+    $(".selectable").on "click", ->
+      
+      n = $(".selectable:checked").length
+      $("#NumberSelected").text n + ((if n is 1 then " invite is" else " invites are")) + " selected"
+
+  
     $("#filter_all").on "click", ->
       $(".invite").removeClass "hidden"
 
@@ -21,3 +26,5 @@ $(document).ready ->
       $(".invite").removeClass "hidden"
       $(".invite").filter(".ans_yes").addClass "hidden"
       $(".invite").filter(".ans_no").addClass "hidden"
+
+    
