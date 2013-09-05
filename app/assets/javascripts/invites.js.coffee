@@ -22,6 +22,11 @@ $(document).ready ->
       $(".invite").filter(".ans_yes").addClass "hidden"
       $(".invite").filter(".ans_nr").addClass "hidden"
 
+    $("#filter_r").on "click", ->
+      $(".invite").removeClass "hidden"
+      $(".invite").addClass "hidden"
+      $(".invite").filter(".responder").removeClass "hidden"
+
     $("#filter_nr").on "click", ->
       $(".invite").removeClass "hidden"
       $(".invite").filter(".ans_yes").addClass "hidden"

@@ -69,6 +69,6 @@ class BlacklistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blacklist_params
-      params.require(:blacklist).permit(:user_id, :user_name, :email)
+      params.require(:blacklist).permit(:user_id, :user_name, :email, :reason)
     end
 end

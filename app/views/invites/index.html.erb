@@ -18,7 +18,9 @@
   <%= radio_button_tag(:filter, "yes") %>
   <%= label_tag "Show Yes Only" %><br>
   <%= radio_button_tag(:filter, "no" ) %>
-  <%= label_tag "Show No Only" %><br>
+  <%= label_tag "Show No Only" %><br><br>
+  <%= radio_button_tag(:filter, "r") %>
+  <%= label_tag "Show Responders Only" %><br>
   <%= radio_button_tag(:filter, "nr") %>
   <%= label_tag "Show Non-Responders Only" %><br><br>
 
@@ -49,9 +51,9 @@
     <% @invites.each do |invite| %>
       <% case invite.answer %>
       <% when "Yes" %>
-        <tr class="invite ans_yes">
+        <tr class="invite ans_yes responder">
       <% when "No" %>
-        <tr class="invite ans_no">
+        <tr class="invite ans_no responder">
       <% else %>
         <tr class="invite ans_nr">
       <% end %>
