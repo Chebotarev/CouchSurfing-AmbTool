@@ -3,11 +3,25 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
+
     $(".selectable").on "click", ->
       
       n = $(".selectable:checked").length
       $("#NumberSelected").text n + ((if n is 1 then " invite is" else " invites are")) + " selected"
 
+    $("#ShowSelectedButton").on "click", ->
+      $("#SelectionsBox").removeClass "hidden"
+      $("#HideSelectedButton").removeClass "hidden"
+      $("#ShowSelectedButton").addClass "hidden"
+      $(".selectable").closest("tr").addClass "hidden"
+      $(".selectable:checked").closest("tr").removeClass "hidden"
+
+    $("#HideSelectedButton").on "click", ->
+      $("#SelectionsBox").addClass "hidden"
+      $("#ShowSelectedButton").removeClass "hidden"
+      $("#HideSelectedButton").addClass "hidden"
+      $(".selectable").closest("tr").removeClass "hidden"
+      
   
     $("#filter_all").on "click", ->
       $(".invite").removeClass "hidden"

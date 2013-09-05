@@ -6,14 +6,21 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="Background">
+
+<div id="Header">
+  <%= image_tag "logo-small.png", id: "SiteLogo" %>
+  <h2>Couchsurfing Ambassador Administraion Tool</h2>
+  <div id="WelcomeLink"><%= link_to 'Back to Welcome', welcome_index_path, :class => "button" %></div>
+</div>
 
 <div id="SiteTools">
   <h3>Site Tools:</h3>
-  <%= link_to 'Back to Welcome', welcome_index_path %>
 </div>
 
-<%= yield %>
+<div id="ContentBox">
+  <%= yield %>
+</div>
 
 </body>
 <%= javascript_include_tag(:application) %>
