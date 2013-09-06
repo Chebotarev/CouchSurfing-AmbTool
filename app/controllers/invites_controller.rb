@@ -12,10 +12,6 @@ class InvitesController < ApplicationController
   def show
   end
 
-  def show_selected
-    @selected_invites = Invite.all #find_by(:id => params[:selected_ids])
-  end
-
   # GET /invites/new
   def new
     @invite = Invite.new

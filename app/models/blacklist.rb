@@ -9,7 +9,7 @@ class Blacklist < ActiveRecord::Base
       unless Invite.find_by user_name: self.user_name
         true
       else
-         
+        false 
       end
 
     else

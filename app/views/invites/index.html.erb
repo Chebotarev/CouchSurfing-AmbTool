@@ -1,4 +1,4 @@
-<h1>Listing Invites</h1>
+<h1>List of Invites</h1>
 
 <!-- IMPLEMENT
 <%= form_tag("/invites", method: "get") do %>
@@ -12,6 +12,8 @@
   <br>
   <%= link_to 'New Invite', new_invite_path, :class => "button" %>
   <br><br>
+
+  <h3>Filters:</h3>
 
   <%= radio_button_tag(:filter, "all", checked:true) %>
   <%= label_tag "Show All" %><br>
@@ -31,11 +33,18 @@
 
   <br>
 
-  <!-- <%= link_to 'Show Selected', selected_path %> -->
-  <div id="ShowSelectedButton" class="button">Show Selected</div>
-  <div id="HideSelectedButton" class="button hidden">Show All</div>
+  <div id="SelectShownButton" class="button">Select All Shown</div>
 
-  <div id="SelectionsBox" class="hidden">Hi</div>
+  <br>
+
+  <div id="DeselectAllButton" class="button">Unselect All</div>
+
+  <br>
+
+  <div id="ShowSelectedButton" class="button">Show Selected</div>
+  <div id="ReshowAllButton" class="button hidden">Show All</div>
+
+  <div id="SelectionTools" class="hidden"><h3>Selection Tools:</h3></div>
 
 </div>
 

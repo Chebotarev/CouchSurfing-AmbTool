@@ -9,8 +9,9 @@
           <%= msg %>
           <% if msg == "User ID is blacklisted!" %>
             <%= link_to 'View', :controller => "blacklists", :action => "show", :id => @invite.user_id %>
-          <% else msg == "User name is blacklisted!" %>
+          <% elsif msg == "User name is blacklisted!" %>
             <%= link_to 'View', :controller => "blacklists", :action => "show", :id => Blacklist.find_by(user_name: @invite.user_name).id %>
+          <% else %>
           <% end %>
         </li>
       <% end %>

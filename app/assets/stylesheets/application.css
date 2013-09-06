@@ -21,11 +21,21 @@
 	text-align: center;
 	padding: 5px 10px 5px 10px;
 	margin-left: 5px;
+	cursor: pointer;
+}
+
+.button:visited {
+        text-decoration: none;
+	color: rgb(212, 73, 11)
 }
 
 .button:hover {
 	background-color: rgb(212, 73, 11);
 	color: white;
+}
+
+.button:active {
+	text-decoration: none;
 }
 
 #SiteLogo {
@@ -77,15 +87,9 @@
 	margin-top: 65px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-bottom: 50px;
+	padding: 5px 5px 50px 5px;
 	background-color: rgb(255, 255, 255);
 	border-radius: 10px;
-}
-
-#SiteTools {
-	position: fixed;
-	top: 10%;
-	left: 80%;
 }
 
 #WelcomeLink {

@@ -3,47 +3,78 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
+  
+    checkboxes = $("input:checkbox")
+    radiobuttons = $("input:radio")
+    invite = $(".invite") 
 
-    $(".selectable").on "click", ->
-      
+    $.fn.hide = ->
+      $(this).addClass "hidden"
+
+    $.fn.unhide = ->
+      $(this).removeClass "hidden"
+
+    $.fn.countSelected = ->
       n = $(".selectable:checked").length
       $("#NumberSelected").text n + ((if n is 1 then " invite is" else " invites are")) + " selected"
+ 
+    $.fn.disableFilters = ->
+      radiobuttons.attr "disabled", true
+
+    $.fn.enableFilters = ->
+      radiobuttons.attr "disabled", false
+
+
+    $(".selectable").on "click", ->
+      $(this).countSelected()      
 
     $("#ShowSelectedButton").on "click", ->
-      $("#SelectionsBox").removeClass "hidden"
-      $("#HideSelectedButton").removeClass "hidden"
-      $("#ShowSelectedButton").addClass "hidden"
-      $(".selectable").closest("tr").addClass "hidden"
-      $(".selectable:checked").closest("tr").removeClass "hidden"
+      $("#SelectionTools").unhide()
+      $("#ReshowAllButton").unhide()
+      $("#ShowSelectedButton").hide()
+      $(".selectable").closest("tr").hide()
+      $(".selectable:checked").closest("tr").unhide()
+      $(this).disableFilters()
 
-    $("#HideSelectedButton").on "click", ->
-      $("#SelectionsBox").addClass "hidden"
-      $("#ShowSelectedButton").removeClass "hidden"
-      $("#HideSelectedButton").addClass "hidden"
-      $(".selectable").closest("tr").removeClass "hidden"
-      
-  
+    $("#ReshowAllButton").on "click", ->
+      $("#SelectionTools").hide()
+      $("#ShowSelectedButton").unhide()
+      $("#ReshowAllButton").hide()
+      $(".selectable").closest("tr").unhide()
+      $(this).enableFilters()
+      radiobuttons.attr "checked", false
+      $("#filter_all").prop "checked", true
+
+    $("#SelectShownButton").on "click", ->
+      checkboxes.each ->
+        $(this).prop("checked", true) unless $(this).closest("tr").hasClass "hidden"
+      $(this).countSelected()
+
+    $("#DeselectAllButton").on "click", ->
+      checkboxes.prop "checked", false
+      $(this).countSelected()
+
     $("#filter_all").on "click", ->
-      $(".invite").removeClass "hidden"
+      invite.unhide()
 
     $("#filter_yes").on "click", ->
-      $(".invite").removeClass "hidden"
-      $(".invite").filter(".ans_no").addClass "hidden"
-      $(".invite").filter(".ans_nr").addClass "hidden"
+      invite.unhide()
+      invite.filter(".ans_no").hide()
+      invite.filter(".ans_nr").hide()
 
     $("#filter_no").on "click", ->
-      $(".invite").removeClass "hidden"
-      $(".invite").filter(".ans_yes").addClass "hidden"
-      $(".invite").filter(".ans_nr").addClass "hidden"
+      invite.unhide()
+      invite.filter(".ans_yes").hide()
+      invite.filter(".ans_nr").hide()
 
     $("#filter_r").on "click", ->
-      $(".invite").removeClass "hidden"
-      $(".invite").addClass "hidden"
-      $(".invite").filter(".responder").removeClass "hidden"
+      invite.unhide()
+      invite.hide()
+      invite.filter(".responder").unhide()
 
     $("#filter_nr").on "click", ->
-      $(".invite").removeClass "hidden"
-      $(".invite").filter(".ans_yes").addClass "hidden"
-      $(".invite").filter(".ans_no").addClass "hidden"
+      invite.unhide()
+      invite.filter(".ans_yes").hide()
+      invite.filter(".ans_no").hide()
 
     

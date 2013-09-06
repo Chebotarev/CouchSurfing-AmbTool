@@ -14,14 +14,9 @@
   <div id="WelcomeLink"><%= link_to 'Back to Welcome', welcome_index_path, :class => "button" %></div>
 </div>
 
-<div id="SiteTools">
-  <h3>Site Tools:</h3>
-</div>
-
 <div id="ContentBox">
   <%= yield %>
 </div>
 
 </body>
-<%= javascript_include_tag(:application) %>
 </html>
