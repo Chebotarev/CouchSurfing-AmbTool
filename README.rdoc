@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Coucsurfing Ambassador Tool. This appication is designed to manage
+those users of Couchsurfing that have been designated to be added to the Ambassador
+program. The overall goal is to automate most of the processes involved
+in managing the Ambassadors, while still allowing administrators and the safety team
+to make any necessary changes based on their analysis of the situation
 
-Things you may want to cover:
+= USAGE
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This application is designed to be a free standing Ruby on Rails site that has minimal 
+interaction with the main CS site and databases. Ideally it will be served on an isolated
+server with an authenticated session required to perform any actions to ensure security while
+maintaining accessability. 
