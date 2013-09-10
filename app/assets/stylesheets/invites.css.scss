@@ -2,24 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-tbody tr:hover {
-	background-color: #d8d8d8;
-}
-
 .ans_yes {
 	background-color: #8bad53;
-}
-
-.blacklisted {
-	background-color: red;
-}
-
-.hidden {
-	display: none;
-}
-
-#InviteTools {
-	position: fixed;
-	top: 15%;
-	left: 80%;
 }

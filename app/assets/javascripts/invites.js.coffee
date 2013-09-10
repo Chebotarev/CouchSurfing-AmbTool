@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  
+
     checkboxes = $("input:checkbox")
     radiobuttons = $("input:radio")
     invite = $(".invite") 
@@ -32,6 +32,9 @@ $(document).ready ->
       $("#SelectionTools").unhide()
       $("#ReshowAllButton").unhide()
       $("#ShowSelectedButton").hide()
+      $("#MakeSelectedAmbs").unhide()
+      $("#AddBlacklist").unhide()
+      $("#DeleteSelected").unhide()
       $(".selectable").closest("tr").hide()
       $(".selectable:checked").closest("tr").unhide()
       $(this).disableFilters()
@@ -40,6 +43,9 @@ $(document).ready ->
       $("#SelectionTools").hide()
       $("#ShowSelectedButton").unhide()
       $("#ReshowAllButton").hide()
+      $("#MakeSelectedAmbs").hide()
+      $("#AddBlacklist").hide()
+      $("#DeleteSelected").hide()
       $(".selectable").closest("tr").unhide()
       $(this).enableFilters()
       radiobuttons.attr "checked", false

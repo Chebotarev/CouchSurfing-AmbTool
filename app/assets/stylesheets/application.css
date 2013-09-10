@@ -12,6 +12,14 @@
  *= require_tree .
  */
 
+table {
+	width: 100%;
+}
+
+tbody tr:hover {
+	background-color: #d8d8d8;
+}
+
 .button {
 	text-decoration: none;
 	border: 1px solid rgb(212, 73, 11);
@@ -38,9 +46,27 @@
 	text-decoration: none;
 }
 
+.hidden {
+	display: none;
+}
+
+.tool_box {
+	border: 2px solid rgb(212, 73, 11);
+	border-radius: 5px;
+	padding: 10px;
+	background-color: rgb(238, 235, 225);
+	position: fixed;
+	top: 15%;
+	left: 80%;
+}
+
+.warning_color {
+	background-color: yellow;
+}
+
 #SiteLogo {
-	width: 8%;
-	height: auto;
+	height: 46px;
+	width: auto;
 	position: absolute;
 	left: 5%;
 	top: 20%;
