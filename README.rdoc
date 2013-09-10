@@ -1,4 +1,4 @@
-== README
+= README
 
 Welcome to the Coucsurfing Ambassador Tool. This appication is designed to manage
 those users of Couchsurfing that have been designated to be added to the Ambassador
@@ -6,7 +6,7 @@ program. The overall goal is to automate most of the processes involved
 in managing the Ambassadors, while still allowing administrators and the safety team
 to make any necessary changes based on their analysis of the situation
 
-= USAGE
+== USAGE
 
 This application is designed to be a free standing Ruby on Rails site that has minimal 
 interaction with the main CS site and databases. Ideally it will be served on an isolated
