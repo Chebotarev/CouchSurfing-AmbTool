@@ -82,5 +82,3 @@ $(document).ready ->
       invite.unhide()
       invite.filter(".ans_yes").hide()
       invite.filter(".ans_no").hide()
-
-    

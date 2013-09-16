@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div class="invite_stats"><strong>Stats:</strong>
+  <br>Created At:
+  <%= @invite.created_at %>
+  <br>Updated At: 
+  <%= @invite.updated_at %>
+  <br>Number of Reminders Sent:
+  <%= @invite.reminders %>
+</div>
+
+
 <p>
   <strong>User:</strong>
   <%= @invite.user_id %>
@@ -19,6 +29,7 @@
   <strong>Answer:</strong>
   <%= @invite.answer %>
 </p>
-
-<%= link_to 'Edit', edit_invite_path(@invite) %> |
-<%= link_to 'Back', invites_path %>
+<div class="remind_button button">Send Reminder Email(NF)</div>
+<br>
+<%= link_to 'Edit', edit_invite_path(@invite), class: "button" %>
+<%= link_to 'Back', invites_path, class: "button" %>

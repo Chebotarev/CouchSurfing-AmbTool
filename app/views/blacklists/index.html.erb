@@ -1,6 +1,7 @@
 <h1>List of Blacklist Entries</h1>
 
 <div id="BlacklistTools" class="tool_box">
+  <br>
   <%= link_to 'New Blacklist Entry', new_blacklist_path, :class => "button" %>
  
   <br><br><br> 
@@ -8,7 +9,10 @@
   <%= image_tag "yellow_exclamation.png", id: "WarningImg", class: "hidden" %>
   <div id="NumberWarnings" class="hidden"></div>
   <br>
-  <div id="ResolveButton" class="button hidden">Force Resolve</div>
+  <div id="ShowWarnButton" class="button hidden">Show Conflicts</div>
+  <div id="ReshowBlacklists" class="button hidden">Show All</div>
+  <br>
+  <div id="ResolveButton" class="button hidden">Force Resolve(NF)</div>
 </div>
 
 <table>

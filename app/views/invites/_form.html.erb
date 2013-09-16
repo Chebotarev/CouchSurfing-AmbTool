@@ -33,7 +33,12 @@
   </div>
   <div class="field">
     <%= f.label :answer %><br>
-    <%= f.text_field :answer %>
+    <%= f.radio_button :answer, "", :checked => true %>
+    <%= label :answer, "No Response" %><br>
+    <%= f.radio_button :answer, "Yes" %>
+    <%= label :answer, "Yes" %><br>
+    <%= f.radio_button :answer, "No" %>
+    <%= label :answer, "No" %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

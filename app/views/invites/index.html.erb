@@ -1,17 +1,13 @@
 <h1>List of Invites</h1>
 
-<!-- IMPLEMENT
-<%= form_tag("/invites", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
--->
-
 <div id="InviteTools" class="tool_box"> 
   <br>
   <%= link_to 'New Invite', new_invite_path, :class => "button" %>
+  
   <br><br>
+  <%= link_to 'Import Invites', invites_import_path, :class => "button" %>
+
+  <br><br><hr>
 
   <h3>Filters:</h3>
 
@@ -46,11 +42,11 @@
 
   <div id="SelectionTools" class="hidden"><h3>Selection Tools:</h3></div>
   
-  <div id="MakeSelectedAmbs" class="button hidden">Make Ambassadors</div>
+  <div id="MakeSelectedAmbs" class="button hidden">Make Ambassadors(NF)</div>
   <br>
-  <div id="AddBlacklist" class="button hidden">Add to Blacklist</div>
+  <div id="AddBlacklist" class="button hidden">Add to Blacklist(NF)</div>
   <br>
-  <div id="DeleteSelected" class="button hidden">Delete</div>
+  <div id="DeleteSelected" class="button hidden">Delete(NF)</div>
   
 
 </div>

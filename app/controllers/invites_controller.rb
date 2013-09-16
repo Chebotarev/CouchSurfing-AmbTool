@@ -61,6 +61,18 @@ class InvitesController < ApplicationController
     end
   end
 
+  # GET /invites/import
+  def import
+  end
+
+  # POST /invites/import
+  def show_import
+    
+    respond_to do |format|
+      format.html { redirect_to invites_import_path, notice: 'The following users will be added if you choose to continue: ' }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_invite

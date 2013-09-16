@@ -1,6 +1,9 @@
 AmbassadorAdminTools::Application.routes.draw do
   resources :blacklists
 
+  get 'invites/import' => 'invites#import'
+  post 'invites/import' => 'invites#show_import'
+
   resources :invites
 
   get "welcome/index"

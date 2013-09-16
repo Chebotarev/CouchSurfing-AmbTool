@@ -1,0 +1,31 @@
+<h1>Import New Invites</h1>
+
+<%= form_tag '/invites/import', id: "Uploader", multipart: true do %>
+  <label for="import-file">Select CSV File:</label>
+  <br><br>
+  <%= file_field_tag "file", accept: 'text/csv', :id => "ImportUpload" %>
+  <%= submit_tag %>
+<% end %>
+<br>
+<p><%= notice %></p>
+
+<% unless notice %>
+  <div id="CalcImports" class="hidden">
+<% else %>
+  <div id="CaclImports">
+<% end %>
+<table>
+
+<thead>
+  <tr>
+    <th>User ID<th>
+    <th>User Name<th>
+    <th>Email<th>
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>  
+</div>
